@@ -19,15 +19,26 @@ public class Arbol<E> {
     private NodoDoble<E> raiz;
     private E dato;
     
+    /**
+     *
+     * @param dato
+     */
     public Arbol(E dato){
         raiz = new NodoDoble(dato);    
     }
     
+    /**
+     *
+     * @param dato
+     */
     public void addNew(E dato){
         NodoDoble p = new NodoDoble(dato);
         
     }
     
+    /**
+     *
+     */
     public void recorrido1() {
         Queue<NodoDoble> queue = new LinkedList<>();
         System.out.println("Comienzo recorrido1");
@@ -47,7 +58,10 @@ public class Arbol<E> {
         }
     }
     
-        public void recorrido2() {
+    /**
+     *
+     */
+    public void recorrido2() {
         Stack<NodoDoble> stac = new Stack<>();
         
         System.out.println("Comienzo recorrido2");
@@ -67,7 +81,11 @@ public class Arbol<E> {
         }
     }
         
-        public void inOrden(NodoDoble r){
+    /**
+     *
+     * @param r
+     */
+    public void inOrden(NodoDoble<E> r){
                 if(r != null){
                     inOrden(r.getLigaIzq());
                     System.out.println(r.getDato());
@@ -75,7 +93,11 @@ public class Arbol<E> {
                 }
         }
         
-        public void posOrden(NodoDoble r){
+    /**
+     *
+     * @param r
+     */
+    public void posOrden(NodoDoble<E> r){
                 if(r != null){
                     posOrden(r.getLigaIzq());
                     posOrden(r.getLigaIzq());
@@ -83,7 +105,11 @@ public class Arbol<E> {
                 }
         }
         
-        public void preOrden(NodoDoble r){
+    /**
+     *
+     * @param r
+     */
+    public void preOrden(NodoDoble<E> r){
                 if(r != null){
                     System.out.println(r.getDato());
                     preOrden(r.getLigaIzq());
