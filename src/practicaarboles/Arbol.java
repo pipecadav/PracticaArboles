@@ -67,7 +67,29 @@ public class Arbol<E> {
         }
     }
         
-    
+        public void inOrden(NodoDoble r){
+                if(r != null){
+                    inOrden(r.getLigaIzq());
+                    System.out.println(r.getDato());
+                    inOrden(r.getLigaDer());
+                }
+        }
+        
+        public void posOrden(NodoDoble r){
+                if(r != null){
+                    posOrden(r.getLigaIzq());
+                    posOrden(r.getLigaIzq());
+                    System.out.println(r.getDato());
+                }
+        }
+        
+        public void preOrden(NodoDoble r){
+                if(r != null){
+                    System.out.println(r.getDato());
+                    preOrden(r.getLigaIzq());
+                    preOrden(r.getLigaDer());
+                }
+        }
             
     
     
