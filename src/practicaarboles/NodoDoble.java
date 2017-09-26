@@ -16,6 +16,11 @@ public class NodoDoble<E> {
     private NodoDoble ligaIzq;
     private NodoDoble ligaDer;
 
+    public NodoDoble(E dato) {
+        this.dato = dato;
+        ligaIzq = ligaDer = null;
+    }
+       
     public E getDato() {
         return dato;
     }
