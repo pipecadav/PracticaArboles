@@ -10,22 +10,22 @@ package practicaarboles;
  * @author Felipe Cadavid & Carolina Diaz
  * @param <E>
  */
-public class NodoDoble<E> {
+public class NodoDoble {
     
-    private E dato;
+    private char dato;
     private NodoDoble ligaIzq;
     private NodoDoble ligaDer;
 
-    public NodoDoble(E dato) {
+    public NodoDoble(char dato) {
         this.dato = dato;
         ligaIzq = ligaDer = null;
     }
        
-    public E getDato() {
+    public char getDato() {
         return dato;
     }
 
-    public void setDato(E dato) {
+    public void setDato(char dato) {
         this.dato = dato;
     }
 

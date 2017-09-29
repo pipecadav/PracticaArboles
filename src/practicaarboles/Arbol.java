@@ -14,37 +14,61 @@ import java.util.Stack;
  * @author Felipe Cadavid & Carolina Diaz
  * @param <E>
  */
-public class Arbol<E> {
+public class Arbol {
     
-    private NodoDoble<E> raiz;
-    private E dato;
+    private NodoDoble raiz, hijoIzq, hijoDer;
+    private char dato;
     
     /**
      *
      * @param dato
      */
-    public Arbol(E dato){
-        raiz = new NodoDoble(dato);    
+    public Arbol(char dato){
+        raiz = new NodoDoble(dato); 
+
     }
     
     /**
      *
-     * @param dato
      */
-    public void addNew(E dato){
-        NodoDoble p = new NodoDoble(dato);
+    public void ingresar(String hilera){
         
+        //( - > tiene hijos
+        //, - > es hermano
+        // ) Se devuelve
+        
+        // (a(b,c),c(d,e),f)
+
+        
+        for(int i=2; i<hilera.length(); i++){
+            switch(hilera.charAt(i)){
+                case '(':
+                    raiz = new NodoDoble(hilera.charAt(i-1));
+                    hijoIzq.setDato(hilera.charAt(i+1));
+                    if(hilera.charAt(i+2) == ','){
+                        hijoDer.setDato(hilera.charAt(i+3));
+                    }else if(hilera.charAt(i+2) == '('){
+                        raiz = hijoDer;
+                        
+                    }
+                    break;
+                case ',':
+                    
+                    
+                    
+            }
+        
+        
+            
+        }
     }
     
-    /**
-     *
-     */
-    public void recorrido1() {
+        public void recorrido1() {
         Queue<NodoDoble> queue = new LinkedList<>();
         System.out.println("Comienzo recorrido1");
         if (raiz != null) {
             queue.add(raiz);
-            NodoDoble<E> p;
+            NodoDoble p;
             while (!queue.isEmpty()) {
                p = queue.poll();
                 System.out.println(p.getDato()+" ,");
@@ -67,7 +91,7 @@ public class Arbol<E> {
         System.out.println("Comienzo recorrido2");
         if (raiz != null) {
             stac.add(raiz);
-            NodoDoble<E> p;
+            NodoDoble p;
             while (!stac.isEmpty()) {
                 p = stac.pop();
                 System.out.println(p.getDato()+" ,");
@@ -85,7 +109,7 @@ public class Arbol<E> {
      *
      * @param r
      */
-    public void inOrden(NodoDoble<E> r){
+    public void inOrden(NodoDoble r){
                 if(r != null){
                     inOrden(r.getLigaIzq());
                     System.out.println(r.getDato());
@@ -97,7 +121,7 @@ public class Arbol<E> {
      *
      * @param r
      */
-    public void posOrden(NodoDoble<E> r){
+    public void posOrden(NodoDoble r){
                 if(r != null){
                     posOrden(r.getLigaIzq());
                     posOrden(r.getLigaIzq());
@@ -109,7 +133,7 @@ public class Arbol<E> {
      *
      * @param r
      */
-    public void preOrden(NodoDoble<E> r){
+    public void preOrden(NodoDoble r){
                 if(r != null){
                     System.out.println(r.getDato());
                     preOrden(r.getLigaIzq());
