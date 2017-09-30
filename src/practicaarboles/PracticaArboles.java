@@ -16,6 +16,11 @@ public class PracticaArboles {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        Arbol a = new Arbol();
+        
+        a.ingresar("(a(b(c,d),e(f,g)))");
+        
     }
     
 }

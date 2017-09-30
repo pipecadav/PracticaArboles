@@ -8,7 +8,6 @@ package practicaarboles;
 /**
  *
  * @author Felipe Cadavid & Carolina Diaz
- * @param <E>
  */
 public class NodoDoble {
     

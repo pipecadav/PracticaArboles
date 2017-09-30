@@ -16,58 +16,59 @@ import java.util.Stack;
  */
 public class Arbol {
     
-    private NodoDoble raiz, hijoIzq, hijoDer;
+    private NodoDoble root;
     private char dato;
     
     /**
      *
      * @param dato
      */
-    public Arbol(char dato){
-        raiz = new NodoDoble(dato); 
+    //public Arbol(char dato){
+    //    root = new NodoDoble(dato); 
 
-    }
+    //}
     
     /**
      *
      */
-    public void ingresar(String hilera){
-        
-        //( - > tiene hijos
-        //, - > es hermano
-        // ) Se devuelve
-        
-        // (a(b,c),c(d,e),f)
+    public void ingresar(String expression){
+        Stack <NodoDoble> st = new Stack<>();
+        NodoDoble aux = root;
+        if(expression.charAt(0) != '('){
+            System.out.println("Inicio ilegal de la hilera");
+        }else{
+            for(int i=2; i<=expression.length(); i++){
+                switch(expression.charAt(i)){
+                    case '(':
+                        if(root != null){
+                        root = new NodoDoble(expression.charAt(i-1));
+                        root.setLigaIzq(aux);
+                        aux.setDato(expression.charAt(i+1));
+                        st.add(root);
+                        }
+                        break;
+                    case ',':
+                        if(root != null){
+                        root.setLigaDer(aux);
+                        aux.setDato(expression.charAt(i+1));
+                        st.add(root);
+                        }
+                        break;
+                    case ')':
+                        root = st.pop();
 
-        
-        for(int i=2; i<hilera.length(); i++){
-            switch(hilera.charAt(i)){
-                case '(':
-                    raiz = new NodoDoble(hilera.charAt(i-1));
-                    hijoIzq.setDato(hilera.charAt(i+1));
-                    if(hilera.charAt(i+2) == ','){
-                        hijoDer.setDato(hilera.charAt(i+3));
-                    }else if(hilera.charAt(i+2) == '('){
-                        raiz = hijoDer;
-                        
-                    }
-                    break;
-                case ',':
-                    
-                    
-                    
-            }
-        
-        
-            
+                        break;
+
+                }
+            }   
         }
     }
     
         public void recorrido1() {
         Queue<NodoDoble> queue = new LinkedList<>();
         System.out.println("Comienzo recorrido1");
-        if (raiz != null) {
-            queue.add(raiz);
+        if (root != null) {
+            queue.add(root);
             NodoDoble p;
             while (!queue.isEmpty()) {
                p = queue.poll();
@@ -89,8 +90,8 @@ public class Arbol {
         Stack<NodoDoble> stac = new Stack<>();
         
         System.out.println("Comienzo recorrido2");
-        if (raiz != null) {
-            stac.add(raiz);
+        if (root != null) {
+            stac.add(root);
             NodoDoble p;
             while (!stac.isEmpty()) {
                 p = stac.pop();
