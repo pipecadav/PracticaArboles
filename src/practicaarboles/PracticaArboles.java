@@ -19,8 +19,7 @@ public class PracticaArboles {
         
         Arbol a = new Arbol();
         
-        a.ingresar("(a(b(c,d),e(f,g)))");
-        
+        a.build("(a(b(c,d),e(f,g)))");
     }
     
 }
