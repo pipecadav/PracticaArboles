@@ -5,6 +5,8 @@
  */
 package practicaarboles;
 
+import arbolb.ArbolBinario;
+
 /**
  *
  * @author Felipe
@@ -17,7 +19,7 @@ public class PracticaArboles {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        Arbol a = new Arbol();
+        ArbolBinario a = new ArbolBinario();
         
         a.build("(a(b(c,d),e(f,g)))");
     }

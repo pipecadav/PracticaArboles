@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package practicaarboles;
+package arbolb;
 
-import java.util.LinkedList;
+
+import arbolb.NodoDoble;
 import java.util.Queue;
 import java.util.Stack;
 
@@ -13,7 +14,7 @@ import java.util.Stack;
  *
  * @author Felipe Cadavid & Carolina Diaz
  */
-public class Arbol {
+public class ArbolBinario {
     
     private NodoDoble root, leftChild, rightChild, parent;
     private char dato;
