@@ -5,7 +5,7 @@
  */
 package practicaarboles;
 
-import arboles.Arbol;
+import arbolbinario.Arbol;
 
 /**
  *
@@ -22,6 +22,15 @@ public class PracticaArboles {
         Arbol a = new Arbol();
         
         //a.build("(a(b(c,d),e(f,g)))");
+        
+       a.createBinaryTree("(a(b(c,d(e,f)),g(h,i(j,k))))");
+ 
+        a.inOrden(a.getRoot());
+        System.out.println(" - ");
+        a.posOrden(a.getRoot());
+        System.out.println(" - ");
+        a.preOrden(a.getRoot());
+        System.out.println(" - ");
     }
     
 }
