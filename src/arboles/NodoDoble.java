@@ -2,7 +2,7 @@
  * Esta clase implementa el Nodo Doble para la creación del arbol binario
  * 
  */
-package arbolb;
+package arboles;
 
 /**
  *

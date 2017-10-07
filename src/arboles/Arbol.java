@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package arbolb;
+package arboles;
 
 
-import arbolb.NodoDoble;
+import arboles.NodoDoble;
 import java.util.Queue;
 import java.util.Stack;
 
@@ -14,40 +14,49 @@ import java.util.Stack;
  *
  * @author Felipe Cadavid & Carolina Diaz
  */
-public class ArbolBinario {
+public class Arbol {
     
-    private NodoDoble root, leftChild, rightChild, parent;
-    private char dato;
+    private NodoDoble raiz;
+    private NodoDoble ult;
+    private NodoDoble x;
+    private String hilera;
     
 
-    public void build(String theLine){
-        Stack <NodoDoble> p = new Stack();
-        NodoDoble r;
-        for(int i=0; i <= theLine.length(); i++){
-            
-            if(theLine.charAt(i) >= 'a'){
-                if(theLine.charAt(i) <= 'z'){
-                    root = new NodoDoble (theLine.charAt(i));
-                    p.push(root);
+    public void arbolBinario(String pHilera){
+        Stack <NodoDoble> pila = new Stack();
+        if((pHilera.charAt(0) != '(') && (pHilera.charAt(1) != '(')){
+            System.out.println("Inicio inválido de la hilera");
+            }else{
+            char atomo = ' ';
+            raiz = new NodoDoble(pHilera.charAt(1));
+            ult = x = raiz;
+            for(int i = 2; i < pHilera.length(); i++){
+                atomo = pHilera.charAt(i);
+                if(atomo == '('){
+                     pila.add(ult);
+                     ult.setDato(pHilera.charAt(i-1));
+                     x.setDato(pHilera.charAt(i+1));
+                     ult.setLigaIzq(x);
+                     ult = x;
+                 
+                }else if(atomo == ','){
+                    x.setDato(pHilera.charAt(i+1));
+                    ult.setLigaDer(x);
+                
+                }else if(atomo == ')'){
+                    if(!pila.isEmpty()){
+                    pila.pop();
+                    }
                     
                 }
-            }else if(theLine.charAt(i) == '('){
-                    p.push(root);
-                    r = root;
-                    root.setLigaIzq(r);
-                    
-                
-            }else if(theLine.charAt(i) == ','){
-                    root = p.pop();
-                    root.setLigaDer(rightChild);
-
-            }else if(theLine.charAt(i) == ')'){
-                    root = p.pop();
             }
-        }
-    }
-        
+               
 
+    
+        
+        }
+        
+    }
    
     /**
      *
