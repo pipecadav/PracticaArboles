@@ -5,7 +5,8 @@
  */
 package practicaarboles;
 
-import arbolbinario.Arbol;
+import arbolbinario.ArbolBinario;
+import arbolnario.ArbolNario;
 
 /**
  *
@@ -17,20 +18,20 @@ public class PracticaArboles {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
         
-        Arbol a = new Arbol();
+        //ArbolBinario a = new ArbolBinario();
+        //a.crearArbolBinario("(a(b(c,d(e,f)),g(h,i(j,k))))");
+        //a.inOrden(a.getRoot());
+        //System.out.println(" - ");
+        //a.posOrden(a.getRoot());
+        //System.out.println(" - ");
+        //a.preOrden(a.getRoot());
+        //System.out.println(" - ");
         
-        //a.build("(a(b(c,d),e(f,g)))");
+        ArbolNario b = new ArbolNario();
         
-       a.createBinaryTree("(a(b(c,d(e,f)),g(h,i(j,k))))");
- 
-        a.inOrden(a.getRoot());
-        System.out.println(" - ");
-        a.posOrden(a.getRoot());
-        System.out.println(" - ");
-        a.preOrden(a.getRoot());
-        System.out.println(" - ");
+        b.crearArbolNario("(a(b(c,d,e),f(g,h,i(j))))");
+        
     }
     
 }
