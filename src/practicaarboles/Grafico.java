@@ -17,8 +17,13 @@ public class Grafico extends JPanel{
     
     @Override
     public void paintComponent(Graphics g){
-        // Dibuja el arbol aquí
-        g.drawOval(5, 5, 25, 25);
+        // Contar la cantidad de nodos
+        // Contar la altura
+        // El nivel 
+        g.drawOval(512, 5, 50, 50);
+        g.drawLine(10, 10, 10, 10);
+        g.drawOval(256, 200, 40, 40);
+        
         
     
 

@@ -7,6 +7,8 @@ package practicaarboles;
 
 import arbolbinario.ArbolBinario;
 import arbolnario.ArbolNario;
+import java.awt.Color;
+import javax.swing.JFrame;
 
 /**
  *
@@ -28,9 +30,18 @@ public class PracticaArboles {
         //a.preOrden(a.getRoot());
         //System.out.println(" - ");
         
-        ArbolNario b = new ArbolNario();
+      //  ArbolNario b = new ArbolNario();
         
-        b.crearArbolNario("(a(b(c,d,e),f(g,h,i(j))))");
+    //    b.crearArbolNario("(a(b(c,d,e),f(g,h,i(j))))");
+        
+        
+        JFrame marco = new JFrame();
+        marco.add(new Grafico());
+        marco.setSize(1024, 1024);
+        marco.setVisible(true);
+        marco.setBackground(Color.WHITE);
+
+        
         
     }
     
