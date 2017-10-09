@@ -18,6 +18,7 @@ public class ArbolBinario {
     private NodoDoble root;
     private NodoDoble ult;
     private NodoDoble x;
+    String salida = " ";
 
     /**
     * Permite crear una arbol binario a partir de una cadena tipo abre paréntesis,
@@ -95,37 +96,44 @@ public class ArbolBinario {
     /**
      * Recorre e imprime el dato de cada nodo del árbol en modo Inorden (I+D). 
      * @param r Recibe un parámetro raiz tipo NodoDoble
+     * @return Devuelve una cadena del recorrido
      */
-    public void inOrden(NodoDoble r){
+    public String inOrden(NodoDoble r){
                 if(r != null){
                     inOrden(r.getLigaIzq());
-                    System.out.print(r.getDato()+", ");
+                    salida = salida+", "+r.getDato();;
                     inOrden(r.getLigaDer());
                 }
+                return salida;
         }
         
     /**
      * Recorre e imprime el dato de cada nodo del árbol en modo Posorden (ID+).
      * @param r Recibe un parámetro raiz tipo NodoDoble
+     * @return Devuelve una cadena del recorrido
      */
-    public void posOrden(NodoDoble r){
+    public String posOrden(NodoDoble r){
                 if(r != null){
                     posOrden(r.getLigaIzq());
                     posOrden(r.getLigaDer());
-                    System.out.print(r.getDato()+", ");
+                    salida = salida+", "+r.getDato();;
                 }
+                return salida;
         }
         
     /**
      * Recorre e imprime el dato de cada nodo del árbol en modo Posorden (+ID).
      * @param r Recibe un parámetro raiz tipo NodoDoble
+     * @return Devuelve una cadena del recorrido
      */
-    public void preOrden(NodoDoble r){
-                if(r != null){
-                    System.out.print(r.getDato()+", ");
+    public String preOrden(NodoDoble r){
+                    
+                    if(r != null){
+                    salida = salida+", "+r.getDato();
                     preOrden(r.getLigaIzq());
                     preOrden(r.getLigaDer());
                 }
+                    return salida;
         }
     
      /**

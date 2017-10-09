@@ -33,17 +33,17 @@ public class PracticaArboles extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        crearNario = new javax.swing.JButton();
+        crearBinario = new javax.swing.JButton();
+        pHilera = new javax.swing.JTextField();
+        convertirAbinario = new javax.swing.JButton();
+        inOrden = new javax.swing.JButton();
+        preOrden = new javax.swing.JButton();
+        posOrden = new javax.swing.JButton();
+        graficarNario = new javax.swing.JButton();
+        graficarBinario = new javax.swing.JButton();
+        SalidaTexto = new javax.swing.JTextField();
+        Borrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -51,52 +51,91 @@ public class PracticaArboles extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Arboles N-Arios y Binarios");
 
-        jButton1.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
-        jButton1.setText("Crear N-Ario");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        crearNario.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        crearNario.setText("Crear N-Ario");
+        crearNario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                crearNarioActionPerformed(evt);
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
-        jButton2.setText("Crear Binario");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        crearBinario.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        crearBinario.setText("Crear Binario");
+        crearBinario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                crearBinarioActionPerformed(evt);
             }
         });
 
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTextField1.setText("Ingrese Arbol como Hilera");
-
-        jButton3.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
-        jButton3.setText("Convertir A Binario");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        pHilera.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        pHilera.setText("Ingrese Arbol como Hilera");
+        pHilera.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                pHileraActionPerformed(evt);
             }
         });
 
-        jButton4.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
-        jButton4.setText("InOrden");
+        convertirAbinario.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        convertirAbinario.setText("Convertir A Binario");
+        convertirAbinario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                convertirAbinarioActionPerformed(evt);
+            }
+        });
 
-        jButton5.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
-        jButton5.setText("PrePrden");
+        inOrden.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        inOrden.setText("InOrden");
+        inOrden.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inOrdenActionPerformed(evt);
+            }
+        });
 
-        jButton6.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
-        jButton6.setText("PosOrden");
+        preOrden.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        preOrden.setText("PrePrden");
+        preOrden.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                preOrdenActionPerformed(evt);
+            }
+        });
 
-        jButton7.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
-        jButton7.setText("Graficar N-Ario");
+        posOrden.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        posOrden.setText("PosOrden");
+        posOrden.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                posOrdenActionPerformed(evt);
+            }
+        });
 
-        jButton8.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
-        jButton8.setText("Graficar Binario");
+        graficarNario.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        graficarNario.setText("Graficar N-Ario");
+        graficarNario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                graficarNarioActionPerformed(evt);
+            }
+        });
 
-        jTextArea1.setEditable(false);
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        graficarBinario.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        graficarBinario.setText("Graficar Binario");
+        graficarBinario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                graficarBinarioActionPerformed(evt);
+            }
+        });
+
+        SalidaTexto.setEditable(false);
+        SalidaTexto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SalidaTextoActionPerformed(evt);
+            }
+        });
+
+        Borrar.setText("Borrar");
+        Borrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BorrarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -104,39 +143,48 @@ public class PracticaArboles extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(87, Short.MAX_VALUE)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(93, 93, 93))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(13, 13, 13)
+                                        .addComponent(crearNario))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(6, 6, 6)
+                                        .addComponent(graficarNario))
+                                    .addComponent(convertirAbinario))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(inOrden)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(preOrden)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(posOrden))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(64, 64, 64)
+                                        .addComponent(crearBinario))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(0, 325, Short.MAX_VALUE)
+                                .addComponent(graficarBinario)
+                                .addGap(65, 65, 65)))
+                        .addGap(25, 25, 25))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(pHilera, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(93, 93, 93))))
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(13, 13, 13)
-                                .addComponent(jButton1))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(jButton7))
-                            .addComponent(jButton3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton6))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(64, 64, 64)
-                                .addComponent(jButton2))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton8))
-                        .addGap(65, 65, 65)))
-                .addGap(25, 25, 25))
+                        .addGap(51, 51, 51)
+                        .addComponent(SalidaTexto, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(209, 209, 209)
+                        .addComponent(Borrar)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -144,45 +192,90 @@ public class PracticaArboles extends javax.swing.JFrame {
                 .addGap(23, 23, 23)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pHilera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(crearNario)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3))
+                        .addComponent(convertirAbinario))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton2)
+                        .addComponent(crearBinario)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton4)
-                            .addComponent(jButton5)
-                            .addComponent(jButton6))))
+                            .addComponent(inOrden)
+                            .addComponent(preOrden)
+                            .addComponent(posOrden))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton8)
-                    .addComponent(jButton7))
-                .addGap(37, 37, 37)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(67, Short.MAX_VALUE))
+                    .addComponent(graficarBinario)
+                    .addComponent(graficarNario))
+                .addGap(28, 28, 28)
+                .addComponent(SalidaTexto, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(Borrar)
+                .addContainerGap(19, Short.MAX_VALUE))
         );
+
+        Borrar.getAccessibleContext().setAccessibleName("Borrar");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void crearNarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearNarioActionPerformed
         // Crear N-ario
-    }//GEN-LAST:event_jButton1ActionPerformed
+        b.crearArbolNario(pHilera.getText());
+    }//GEN-LAST:event_crearNarioActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void crearBinarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearBinarioActionPerformed
         // Crear Binario
-        b.crearArbolNario(jTextField1.getText());
-        
-    }//GEN-LAST:event_jButton2ActionPerformed
+        a.crearArbolBinario(pHilera.getText());
+    }//GEN-LAST:event_crearBinarioActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void convertirAbinarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_convertirAbinarioActionPerformed
         // Convertir A Binario
-    }//GEN-LAST:event_jButton3ActionPerformed
+        a.convertirBinArio(b);
+    }//GEN-LAST:event_convertirAbinarioActionPerformed
+
+    private void pHileraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pHileraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pHileraActionPerformed
+
+    private void inOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inOrdenActionPerformed
+        // TODO add your handling code here:
+        
+        SalidaTexto.setText(a.inOrden(a.getRoot()));
+
+    }//GEN-LAST:event_inOrdenActionPerformed
+
+    private void preOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_preOrdenActionPerformed
+        // TODO add your handling code here:
+        
+        SalidaTexto.setText(a.preOrden(a.getRoot()));
+    }//GEN-LAST:event_preOrdenActionPerformed
+
+    private void posOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_posOrdenActionPerformed
+        // TODO add your handling code here:
+        
+        SalidaTexto.setText(a.posOrden(a.getRoot()));
+    }//GEN-LAST:event_posOrdenActionPerformed
+
+    private void SalidaTextoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalidaTextoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SalidaTextoActionPerformed
+
+    private void graficarBinarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_graficarBinarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_graficarBinarioActionPerformed
+
+    private void graficarNarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_graficarNarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_graficarNarioActionPerformed
+
+    private void BorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BorrarActionPerformed
+        // TODO add your handling code here:
+        SalidaTexto.setText(null);
+    }//GEN-LAST:event_BorrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -220,17 +313,17 @@ public class PracticaArboles extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
+    private javax.swing.JButton Borrar;
+    private javax.swing.JTextField SalidaTexto;
+    private javax.swing.JButton convertirAbinario;
+    private javax.swing.JButton crearBinario;
+    private javax.swing.JButton crearNario;
+    private javax.swing.JButton graficarBinario;
+    private javax.swing.JButton graficarNario;
+    private javax.swing.JButton inOrden;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField pHilera;
+    private javax.swing.JButton posOrden;
+    private javax.swing.JButton preOrden;
     // End of variables declaration//GEN-END:variables
 }
