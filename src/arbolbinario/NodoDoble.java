@@ -2,7 +2,7 @@ package arbolbinario;
 
 /**
  * Esta clase implementa los Nodos que componen un arbol binario
- * @author Felipe Cadavid & Carolina Diaz
+ * @author Felipe Cadavid y Carolina Diaz
  * @version 1.0
  * @since 07-10-2017
  */
@@ -23,7 +23,7 @@ public class NodoDoble {
     
     /**
      * Devuelve el dato de un Nodo
-     * @return 
+     * @return Dato de tipo char
      */
     public char getDato() {
         return dato;
@@ -39,7 +39,7 @@ public class NodoDoble {
     
     /**
      * Recupera la liga izquierda del Nodo
-     * @return 
+     * @return Dato de tipo NodoDoble
      */
     public NodoDoble getLigaIzq() {
         return ligaIzq;
@@ -55,7 +55,7 @@ public class NodoDoble {
 
     /**
      * Recupera la liga derecha del Nodo
-     * @return 
+     * @return Dato de tipo NodoDoble
      */
     public NodoDoble getLigaDer() {
         return ligaDer;
@@ -63,7 +63,7 @@ public class NodoDoble {
 
     /**
      * Modifica y asigna la liga derecha del nodo
-     * @param ligaDer 
+     * @param ligaDer Recibe un parametro NodoDoble
      */
     public void setLigaDer(NodoDoble ligaDer) {
         this.ligaDer = ligaDer;

@@ -3,7 +3,7 @@ package arbolnario;
 
 /**
  * Esta clase implementa los Nodos que componen un arbol N-ario
- * @author Felipe Cadavid & Carolina Diaz
+ * @author Felipe Cadavid y Carolina Diaz
  * @version 1.0
  * @since 07-10-2017
  */
@@ -17,18 +17,17 @@ public class Nodo {
 
     /**
      * Crea un nodo para una arbol n-ario 
-     * @param sw Recibe un tipo de dato byte sea 1 o 0
      * @param dato Recibe el dato del nodo
      */
-    public Nodo(int sw, char dato) {
-        this.sw = sw;
+    public Nodo(char dato) {
+        this.sw = 0;
         this.dato = dato;
     }
     
     /**
      * Devuelve 0 si el campo de dato contiene un char
      * Devuelve 1 si el campo de dato tiene hijos/subarbol
-     * @return 
+     * @return tipo de dato int
      */
     public int getSw() {
         return sw;
@@ -45,7 +44,7 @@ public class Nodo {
 
     /**
      * Devuelve el dato que está almacenado en el nodo
-     * @return 
+     * @return tipo de dato Char
      */
     public char getDato() {
         return dato;
@@ -61,7 +60,7 @@ public class Nodo {
 
     /**
      * Devuelve la liga del nodo
-     * @return 
+     * @return tio de dato Nodo
      */
     public Nodo getLiga() {
         return liga;

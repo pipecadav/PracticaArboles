@@ -1,6 +1,7 @@
 package arbolbinario;
 
 
+import arbolnario.*;
 import java.util.Stack;
 
 /**
@@ -8,7 +9,7 @@ import java.util.Stack;
  * ingresado como hilera de abre parentesis, atomos, comas y cierre parentesis
  * Incluye la función convertir arbol n-ario en árbol binario
  * Incluye los recorridos pre, in y pos-orden.
- * @author Felipe Cadavid & Carolina Diaz
+ * @author Felipe Cadavid y Carolina Diaz
  * @version 1.2
  * @since 07-10-2017
  */
@@ -50,11 +51,45 @@ public class ArbolBinario {
     
     /**
      * Permite convertir un árbol n-ario en un árbol binario
-     * 
+     * @param n Recibe un Arbol N-ario
      */
-    public void convertirBinArio(){
-        
-        
+    public void convertirBinArio(ArbolNario n){
+        Nodo p = n.getRoot();
+        Nodo q;
+        x = new NodoDoble(p.getDato());
+        root = ult = x;
+        Stack pila = new Stack();
+        p = p.getLiga();
+        while(p != null){
+            if(p.getSw() == 0){
+                x = new NodoDoble(p.getDato());
+            }else{
+                q = (Nodo) p.getlDato();
+                x = new NodoDoble(q.getDato());
+                pila.add(x);
+                pila.add(q.getLiga());
+            }
+            ult.setLigaIzq(x);
+            ult = x;
+            p = p.getLiga();
+            while(p != null){
+                if(p.getSw() == 0){
+                    x = new NodoDoble(p.getDato());
+                }else{
+                    q = (Nodo) p.getlDato();
+                    x = new NodoDoble (q.getDato());
+                    pila.add(x);
+                    pila.add(q.getLiga());
+                }
+                ult.setLigaDer(x);
+                ult = x;
+                p = p.getLiga();
+            }
+            if(!pila.isEmpty()){
+                p = (Nodo) pila.pop();
+                ult = (NodoDoble) pila.pop();
+            }
+        } 
     }
    
     /**
@@ -95,7 +130,7 @@ public class ArbolBinario {
     
      /**
      * Retorna la raiz del arbol binario
-     * @return 
+     * @return Dato de tipo NodoDoble
      */
     public NodoDoble getRoot() {
         return root;

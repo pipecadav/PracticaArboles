@@ -7,7 +7,7 @@ import java.util.Stack;
 /**
  * Clase que contiene las funciones de un arbol n-ario como lista generalizada 
  * Incluye las funciones de crear arbol,  e imprimir arbol. 
- * @author Felipe Cadavid & Carolina Diaz
+ * @author Felipe Cadavid y Carolina Diaz
  * @version 1.2
  * @since 07-10-2017
  */
@@ -27,44 +27,44 @@ public class ArbolNario {
         if((pHilera.charAt(0) != '(') && (pHilera.charAt(1) == '(')){
             System.out.println("Inicio inválido de la hilera");
             }else{
-            root = new Nodo(0, pHilera.charAt(1));
+            root = new Nodo(pHilera.charAt(1));
             ult = root;
-            for(int i = 2; i < pHilera.length(); i++){
+            for(int i = 3; i < pHilera.length()-1; i++){
                 char atom = pHilera.charAt(i);
-                if(atom == '('){
-                    x = new Nodo(1,' ');
-                    ult.setLiga(x);
-                    ult = ult.getLiga();
-                }
-                switch(atom){
-                    
-                        
-                    case '(':
-                        ult.setSw(1);
-                        pila.add(ult);  
-                        break;
-                    case ',':
+                x = new Nodo(' ');
+                ult.setLiga(x);
+                ult = x;
+                if(pHilera.charAt(i+1) == '('){
+                    ult.setSw(1);
+                    pila.add(ult);
+                    x = new Nodo(atom);
+                    ult.setlDato(x);
+                    ult = x;
+                    i = i+2;
+                }else{
+                    ult.setDato(atom);
+                    if(pHilera.charAt(i+1) == ')'){
                         i++;
-                        break;
-                        
-                    case ')':
                         if(!pila.isEmpty()){
                         ult = (Nodo) pila.pop();
+                        i++;
                         }
-                        break;
-                        
-                    default:
-                        x = new Nodo(0, atom);
-                        ult.setLiga(x);
-                        ult = ult.getLiga();
-                        //ult.setlDato(x);
-                        //ult = ult.getLiga();
-                        break;
-                    
+                        if(pHilera.charAt(i-1) == ','){
+                        i++;
+                        }
+                    }else{
+                        i = i+2;
+                    }
                 }
-            
             }
         }  
+    }
+     /**
+     * Retorna la raiz del arbol N-ario
+     * @return Tipo de dato Nodo
+     */
+    public Nodo getRoot() {
+        return root;
     }
 
 }
