@@ -59,6 +59,70 @@ public class ArbolNario {
             }
         }  
     }
+    
+    
+    /**
+     * Imprime las hojas del arbol.
+     * @param r Recibe un nodo como parametro.
+     */
+    public  void imprimirHojas(Nodo r){
+        if(r == null){
+            System.out.println("No existe el Arbol");
+        }else if(r.getLiga() == null){
+            System.out.println("Arbol sin hojas");
+        }
+        Nodo x = r.getLiga();
+        Stack pila = new Stack();
+        while(x != null){
+            if(x.getSw() == 1){
+                if(x.getLiga() != null){
+                    pila.add(x);
+                }
+                x = x.getLiga();
+                if(x.getSw() == 0){
+                    System.out.println(x.getDato());
+                }
+            }else{
+                System.out.println(x.getDato());
+            }
+            if(x.getLiga() != null){
+                x = x.getLiga();
+            }else{
+                Nodo y = (Nodo) pila.pop();
+                if(y != null){
+                    x = y.getLiga();
+                }else{
+                    x = null;
+                }
+            }
+        }
+    }
+    
+    /**
+     * Cuenta las hojas de un arbol n-ario
+     * @param r Recibe un dato tipo Nodo
+     * @return Devuelve la cantidad de hojas
+     */
+    public int contarHojasArbol(Nodo r){
+        int hojas = 0;
+        String respuesta;
+        if(r == null){
+            return 0;
+        }else if(r.getLiga() == null){
+            return 1;
+        }
+        Nodo p = r.getLiga();
+        while(p != null){
+            if(p.getSw() == 0){
+                hojas++;
+            }else{
+                hojas = hojas + contarHojasArbol((Nodo) p.getlDato());
+            }
+            p = p.getLiga();
+        }
+        return hojas;
+    }
+    
      /**
      * Retorna la raiz del arbol N-ario
      * @return Tipo de dato Nodo
