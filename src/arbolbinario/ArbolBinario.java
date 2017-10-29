@@ -136,6 +136,20 @@ public class ArbolBinario {
                     return salida;
         }
     
+    public int cantidadHojas(NodoDoble r){
+        int hojas = 0;
+        if(r != null){
+            if((r.getLigaIzq() == null) && (r.getLigaDer() == null)){
+                hojas++;
+            }else{
+                hojas = hojas + cantidadHojas(r.getLigaDer()) + cantidadHojas(r.getLigaIzq());
+            }
+        }
+        return hojas;
+    }
+    
+    
+    
      /**
      * Retorna la raiz del arbol binario
      * @return Dato de tipo NodoDoble
